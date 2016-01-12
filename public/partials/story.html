@@ -6,13 +6,13 @@
     </div>
     <div class="col-md-8">
       <p>{{story.summary}}</p>
-      <a ng-click="viewSite()">View Site</a>
+      <a ng-click="viewSite()" class="view-site">View Site</a>
     </div>
   </div>
   <div class="row opinion-section">
     <div class="col-md-6">
       <div class="row">
-        <h1 class="header">Opinions</h1>
+        <h2 class="header">Opinions</h2>
         <form ng-submit="submitOpinion()">
           <div class="form-group">
             <label for="opinion">What's your opinion?</label>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="col-md-5 col-md-offset-1">
-      <h1 class="header">Expert Analysis</h1>
+      <h2 class="header">Expert Analysis</h2>
       <ul>
         <li ng-repeat="word in wordAnalysis">{{word.word}} ({{word.occurance}})</li>
       </ul>

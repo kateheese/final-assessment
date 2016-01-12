@@ -1,7 +1,7 @@
-<a ng-click="showForm = !showForm" class="show-hide-btn">
+<button class="btn btn-warning show-hide-btn" ng-click="showForm = !showForm">
   <span ng-show="!showForm">Show</span>
   <span ng-show="showForm">Hide</span>
-</a>
+</button>
 <div class="story-form" ng-show="showForm">
   <div class="container">
     <h1 class="header">Add a Story</h1>
@@ -39,7 +39,7 @@
   </div>
 </div>
 <div class="container">
-  <h1>Today's News</h1>
+  <h1 class="header">Today's News</h1>
   <div class="stories">
     <div class="row">
       <div class="col-sm-6 col-md-4" ng-repeat="story in stories">
@@ -48,7 +48,7 @@
             <a href="/stories/{{story.id}}"><img src="{{story.image}}"></a>
           </div>
           <div class="caption">
-            <a href="/stories/{{story.id}}" ng-click="goToStory()">{{story.title}}</a>
+            <a href="/stories/{{story.id}}" class="story-title">{{story.title}}</a>
           </div>
         </div>
       </div>
