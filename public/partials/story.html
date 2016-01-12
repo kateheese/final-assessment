@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="header">{{story.title}}</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <img class="page-image" src="{{story.image}}">
+    </div>
+    <div class="col-md-8">
+      <p>{{story.summary}}</p>
+    </div>
+  </div>
+  <div class="row opinion-section">
+    <div class="col-md-6">
+      <div class="row">
+        <h1 class="header">Opinions</h1>
+        <form ng-submit="submitOpinion()">
+          <div class="form-group">
+            <label for="opinion">What's your opinion?</label>
+            <textarea class="form-control" rows="3" ng-model="opinion.opinion"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Opine</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="opinion" ng-repeat="opinion in opinions">
+          <p>{{opinion.opinion}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <h1 class="header">Expert Analysis</h1>
+    </div>
+  </div>
+</div>

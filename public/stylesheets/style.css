@@ -6,8 +6,17 @@ a {
   color: #00B7FF;
 }
 
-.form-header {
+.header {
   margin-bottom: 30px;
+}
+
+.opinion {
+  padding: 30px;
+  border-bottom: 1px solid black;
+}
+
+.opinion-section {
+  margin-bottom: 40px;
 }
 
 .page-header {
@@ -17,6 +26,10 @@ a {
   margin-bottom: 0;
   align-items: center;
   border-bottom: 1px solid black;
+}
+
+.page-image {
+  width: 100%;
 }
 
 .show-hide-btn {

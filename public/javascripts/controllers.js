@@ -1,17 +1,28 @@
 app.controller('HomeController', ['$scope', '$http', function($scope, $http) {
-  $scope.submitForm = function() {
-    console.log($scope.story)
-    $http.post('/api/stories', $scope.story).then(function(response) {
-      $scope.story = {};
-    })
-  }
-
   $http.get('/api/stories').then(function(result) {
-    console.log(result.data.rows)
     $scope.stories = result.data.rows;
   })
+
+  $scope.submitForm = function() {
+    $http.post('/api/stories', $scope.story).then(function(result) {
+      $scope.story = {};
+      $scope.showForm = false;
+    })
+  }
 }])
 
-app.controller('StoryController', ['$scope', function($scope) {
-  
+app.controller('StoryController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+  $http.get('/api/stories/' + $routeParams.id).then(function(result) {
+    $scope.story = result.data.rows[0];
+  })
+
+  $http.get('/api/opinions/' + $routeParams.id).then(function(result) {
+    $scope.opinions = result.data.rows;
+  })
+
+  $scope.submitOpinion = function() {
+    $http.post('/api/opinions', {story_id: $routeParams.id, opinion: $scope.opinion.opinion}).then(function(result) {
+      $scope.opinion = {};
+    })
+  }
 }])

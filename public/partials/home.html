@@ -4,7 +4,7 @@
 </a>
 <div class="story-form" ng-show="showForm">
   <div class="container">
-    <h1 class="form-header">Add a Story</h1>
+    <h1 class="header">Add a Story</h1>
     <form class="form-horizontal" ng-submit="submitForm()">
       <div class="form-group">
         <label for="title" class="col-sm-1">Title</label>
@@ -48,7 +48,7 @@
             <img src="{{story.image}}">
           </div>
           <div class="caption">
-            <a href="/stories/{{story.id}}">{{story.title}}</a>
+            <a href="/stories/{{story.id}}" ng-click="goToStory()">{{story.title}}</a>
           </div>
         </div>
       </div>
