@@ -6,6 +6,7 @@
     </div>
     <div class="col-md-8">
       <p>{{story.summary}}</p>
+      <a ng-click="viewSite()">View Site</a>
     </div>
   </div>
   <div class="row opinion-section">
@@ -28,6 +29,9 @@
     </div>
     <div class="col-md-5 col-md-offset-1">
       <h1 class="header">Expert Analysis</h1>
+      <ul>
+        <li ng-repeat="word in wordAnalysis">{{word.word}} ({{word.occurance}})</li>
+      </ul>
     </div>
   </div>
 </div>

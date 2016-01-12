@@ -10,6 +10,15 @@ a {
   margin-bottom: 30px;
 }
 
+.home-header {
+  color: black;
+}
+
+.home-header:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .opinion {
   padding: 30px;
   border-bottom: 1px solid black;
