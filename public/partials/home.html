@@ -1,0 +1,57 @@
+<a ng-click="showForm = !showForm" class="show-hide-btn">
+  <span ng-show="!showForm">Show</span>
+  <span ng-show="showForm">Hide</span>
+</a>
+<div class="story-form" ng-show="showForm">
+  <div class="container">
+    <h1 class="form-header">Add a Story</h1>
+    <form class="form-horizontal" ng-submit="submitForm()">
+      <div class="form-group">
+        <label for="title" class="col-sm-1">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="title" ng-model="story.title" autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="link" class="col-sm-1">Link</label>
+        <div class="col-sm-10">
+          <input type="url" class="form-control" id="link" ng-model="story.link">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image" class="col-sm-1">Image URL</label>
+        <div class="col-sm-10">
+          <input type="url" class="form-control" id="image" ng-model="story.image">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="summary" class="col-sm-1">Summary</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" rows="3" id="summary" ng-model="story.summary"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+          <button type="submit" class="btn btn-default">Link it up!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container">
+  <h1>Today's News</h1>
+  <div class="stories">
+    <div class="row">
+      <div class="col-sm-6 col-md-4" ng-repeat="story in stories">
+        <div class="thumbnail">
+          <div class="story-image">
+            <img src="{{story.image}}">
+          </div>
+          <div class="caption">
+            <a href="/stories/{{story.id}}">{{story.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
