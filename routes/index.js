@@ -82,7 +82,7 @@ router.get('/api/opinions/:id', function(req, res, next) {
 
 router.get('*', function(req, res) {
   res.sendFile('index.html', {
-    root: __dirname + '/public'
+    root: __dirname + '/../public'
   })
 });
 
